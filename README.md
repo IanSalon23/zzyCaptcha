@@ -21,7 +21,6 @@ This service generates animated GIF CAPTCHAs that are easy for humans to solve b
 - **Backend**: Python 3, Flask
 - **Image Generation**: Pillow, NumPy
 - **Database**: SQLite
-- **Production Server**: Waitress
 
 ## Installation & Setup
 

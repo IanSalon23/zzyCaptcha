@@ -21,7 +21,6 @@
 - **后端**: Python 3, Flask
 - **图像生成**: Pillow, NumPy
 - **数据库**: SQLite
-- **生产服务器**: Waitress
 
 ## 安装与设置
 
