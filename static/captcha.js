@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div id="zzy-checkbox" class="zzy-captcha-checkbox">
                         <div class="checkmark"></div>
                     </div>
-                    <span class="zzy-captcha-label">I am human</span>
+                    <span class="zzy-captcha-label">I am not zzyss</span>
                 </div>
                 <div class="zzy-captcha-logo">
                     <img src="/static/zzyss.png" alt="zzyCaptcha">
