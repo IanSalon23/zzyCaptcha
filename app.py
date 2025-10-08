@@ -166,7 +166,7 @@ def get_captcha_gif():
     if not challenge:
         return "Invalid or expired challenge", 404
         
-    gif_data = generate_captcha_gif("ZZYSS")#challenge['text'])
+    gif_data = generate_captcha_gif(challenge['text'])
     return Response(gif_data, mimetype='image/gif')
 
 @app.route('/api/check_answer', methods=['POST'])
