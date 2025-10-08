@@ -25,6 +25,9 @@ FONT_PATH = os.path.join("resources", "Roboto-SemiBold.ttf")
 CHALLENGE_EXPIRATION_SECONDS = 300  # Challenges expire after 5 minutes
 DATABASE_PATH = "captcha.db"
 
+# Define a character set that excludes visually similar characters
+ALLOWED_CHARS = "ABCDEFGHJKLMNPRSTXYZ"
+
 # --- Security & Environment ---
 SITE_KEY = os.getenv("SITE_KEY", "site_key_12345")
 SECRET_KEY = os.getenv("SECRET_KEY", "secret_key_abcde")
@@ -138,7 +141,7 @@ def get_challenge(site_key):
     cleanup_expired_challenges()
 
     challenge_id = str(uuid.uuid4())
-    captcha_text = ''.join(random.choices(string.ascii_uppercase, k=CAPTCHA_LENGTH))
+    captcha_text = ''.join(random.choices(ALLOWED_CHARS, k=CAPTCHA_LENGTH))
     expires_at = int(time.time()) + CHALLENGE_EXPIRATION_SECONDS
 
     db = get_db()
@@ -185,7 +188,7 @@ def check_answer():
     if user_answer == challenge['text']:
         return jsonify({"success": True})
     else:
-        new_captcha_text = ''.join(random.choices(string.ascii_uppercase, k=CAPTCHA_LENGTH))
+        new_captcha_text = ''.join(random.choices(ALLOWED_CHARS, k=CAPTCHA_LENGTH))
         db.execute("UPDATE challenges SET text = ? WHERE id = ?", (new_captcha_text, challenge_id))
         db.commit()
         return jsonify({"success": False, "error": "Incorrect answer"})
