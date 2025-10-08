@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zzyCaptcha Demo</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="demo-container">
+        <form id="my-form" action="/submit_form" method="POST">
+            <h1>zzyCaptcha Demo</h1>
+
+            <!-- Display Flashed Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="verification-result {{ category }}">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            <!-- This is where the CAPTCHA widget will be rendered -->
+            <div class="zzy-captcha-widget-container"></div>
+            
+            <!-- Hidden inputs for the backend -->
+            <input type="hidden" name="zzy_challenge_id" id="zzy_challenge_id">
+            <input type="hidden" name="zzy_user_answer" id="zzy_user_answer">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Integration Script -->
+    <script>
+        // Pass config to the captcha script
+        window.zzyCaptchaConfig = {
+            siteKey: "{{ site_key }}",
+            selector: ".zzy-captcha-widget-container"
+        };
+    </script>
+    <script src="/static/captcha.js"></script>
+
+    <script>
+        // Handle form submission
+        document.getElementById('my-form').addEventListener('submit', function(event) {
+            const challengeId = document.getElementById('zzy_challenge_id').value;
+            const userAnswer = document.getElementById('zzy_user_answer').value;
+
+            if (!challengeId || !userAnswer) {
+                // Prevent form submission if captcha is not solved
+                event.preventDefault();
+                // You can optionally display a message here
+                alert('Please complete the CAPTCHA before submitting.');
+            }
+            // If fields are populated, the form submits as normal
+        });
+    </script>
+</body>
+</html>

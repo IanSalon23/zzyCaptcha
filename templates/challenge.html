@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zzyCaptcha Challenge</title>
+    <!-- The parent modal provides the main styles, but we link it anyway -->
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Styles specific to the iframe content */
+        body { padding: 0; background-color: #fff; }
+        .error-text {
+            color: #D8000C; /* Red for errors */
+            background-color: #FFD2D2; /* Light red background */
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+            min-height: 1.2em; /* Reserve space */
+            visibility: hidden; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <div class="captcha-container">
+        <div class="captcha-body">
+            <p>Type the characters from the image.</p>
+            <img id="captcha-image" src="/api/captcha.gif?id={{ challenge_id }}" alt="CAPTCHA Image">
+            <input type="text" id="captcha-input" name="captcha-input" autocomplete="off" autocorrect="off" autocapitalize="off" required autofocus>
+            <div id="error-message" class="error-text"></div>
+        </div>
+        <div class="captcha-footer">
+            <button id="submit-btn">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        const challengeId = "{{ challenge_id }}";
+        const input = document.getElementById('captcha-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const captchaImage = document.getElementById('captcha-image');
+        const errorMessage = document.getElementById('error-message');
+
+        async function verifyAndRespond() {
+            const userAnswer = input.value.trim();
+            if (userAnswer.length === 0) return;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Verifying...';
+            errorMessage.style.visibility = 'hidden'; // Hide on new attempt
+
+            try {
+                const response = await fetch('/api/check_answer', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        challenge_id: challengeId,
+                        user_answer: userAnswer
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // On success, notify the parent window
+                    window.parent.postMessage({
+                        type: 'zzyCaptcha-response',
+                        challengeId: challengeId,
+                        userAnswer: userAnswer // Send answer back to parent
+                    }, "{{ allowed_origin }}");
+                } else {
+                    // On failure, show error and refresh captcha
+                    errorMessage.textContent = result.error || 'Incorrect answer. Please try again.';
+                    errorMessage.style.visibility = 'visible';
+                    captchaImage.src = `/api/captcha.gif?id=${challengeId}&t=${new Date().getTime()}`; // Refresh image
+                    input.value = ''; // Clear input
+                }
+            } catch (error) {
+                errorMessage.textContent = 'An error occurred. Please try again.';
+                errorMessage.style.visibility = 'visible';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+                input.focus();
+            }
+        }
+
+        submitBtn.addEventListener('click', verifyAndRespond);
+        input.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                submitBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
