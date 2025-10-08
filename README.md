@@ -8,7 +8,7 @@ A simple, self-hostable, "persistence of vision" CAPTCHA service.
 
 This service generates animated GIF CAPTCHAs that are easy for humans to solve but difficult for bots to OCR. It provides a secure, backend-focused verification flow that is easy for developers to integrate into their websites.
 
-![zzyCaptcha Demo](https://i.imgur.com/TAHDdZB.gif) <!-- Placeholder: Replace with an actual demo GIF -->
+![zzyCaptcha Demo](https://i.imgur.com/FNREj23.gif) <!-- Placeholder: Replace with an actual demo GIF -->
 
 ## Features
 

@@ -8,7 +8,7 @@
 
 本服务生成的动态GIF验证码易于人类识别，但对于机器人OCR识别则非常困难。它提供了一个安全的、以后端为中心的验证流程，使开发者可以轻松地将其集成到自己的网站中。
 
-![zzyCaptcha 演示](https://i.imgur.com/TAHDdZB.gif) <!-- 占位符：请替换为真实的演示GIF图 -->
+![zzyCaptcha 演示](https://i.imgur.com/FNREj23.gif) <!-- 占位符：请替换为真实的演示GIF图 -->
 
 ## 功能特性
 

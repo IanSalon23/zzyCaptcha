@@ -21,7 +21,7 @@ LOOP_FRAMES = 30
 SCROLL_SPEED = 2
 FONT_SIZE = 75
 CAPTCHA_LENGTH = 5
-FONT_PATH = os.path.join("resources", "Roboto-SemiBold.ttf")
+FONT_PATH = os.path.join("resources", "MonaspaceNeon-WideBold.otf")
 CHALLENGE_EXPIRATION_SECONDS = 300  # Challenges expire after 5 minutes
 DATABASE_PATH = "captcha.db"
 
@@ -166,7 +166,7 @@ def get_captcha_gif():
     if not challenge:
         return "Invalid or expired challenge", 404
         
-    gif_data = generate_captcha_gif(challenge['text'])
+    gif_data = generate_captcha_gif("ZZYSS")#challenge['text'])
     return Response(gif_data, mimetype='image/gif')
 
 @app.route('/api/check_answer', methods=['POST'])
