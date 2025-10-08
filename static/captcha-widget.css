@@ -3,59 +3,6 @@
 *::after {
     box-sizing: border-box;
 }
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
-    margin: 0;
-}
-
-.demo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-}
-
-#my-form {
-    background: #fff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 100%;
-    max-width: 360px;
-}
-
-#my-form button {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#my-form button:hover {
-    background-color: #0056b3;
-}
-
-#verification-result {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 600;
-    width: 100%;
-    max-width: 360px;
-}
-
-.success { background-color: #d4edda; color: #155724; }
-.error { background-color: #f8d7da; color: #721c24; }
 
 /* --- zzyCaptcha Widget --- */
 .zzy-captcha-widget {
@@ -135,6 +82,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .zzy-captcha-modal {
@@ -169,51 +117,6 @@ body {
 
 .zzy-captcha-modal-body iframe {
     width: 100%;
-    height: 320px; /* Adjust to fit new challenge size */
+    height: 320px;
     border: none;
-}
-
-/* --- Styles for challenge.html (inside the iframe) --- */
-.captcha-container {
-    text-align: center;
-}
-
-.captcha-body p {
-    font-size: 0.9em;
-    color: #555;
-    margin: 0 0 10px 0;
-}
-
-#captcha-image {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-    height: auto;
-}
-
-#captcha-input {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 1.5em;
-    letter-spacing: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-transform: uppercase;
-}
-
-.captcha-footer {
-    padding-top: 15px;
-}
-
-#submit-btn {
-    width: 100%;
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
 }
